@@ -15,6 +15,12 @@
       href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@1,300;1,600&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lumanosimo&family=VT323&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -61,31 +67,36 @@
       <section class="new__tweet">
         <!-- <h2>Compose Tweet</h2> -->
         <form method="POST" action="/tweets" class="new__tweet__form">
-          <textarea class="form__textarea" name="text" placeholder="Sing your Song"></textarea>
+          <textarea
+            class="form__textarea"
+            name="text"
+            placeholder="Sing your Song"
+          ></textarea>
           <div class="form__footer">
-            <input type="submit" value="Tweet" class="form__input">
+            <input type="submit" value="Tweet" class="form__input" />
             <span class="count">140</span>
           </div>
         </form>
       </section>
       <article class="tweet__container">
         <top>
-          <h4 class="user"></h4>
+          <h4 class="user"><i class="fa-solid fa-dragon"></i></h4>
           <h4 class="handle"></h4>
         </top>
         <tweetarea class="text"></tweetarea>
         <bottom>
           <h6 class="date"></h6>
           <h6 class="icons">
-            <i class="fa-regular fa-flag"></i><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i class="fa-regular fa-heart"></i><i class="fa-solid fa-heart"></i>
+            <i class="fa-regular fa-flag"></i><i class="fa-solid fa-flag"></i
+            ><i class="fa-solid fa-retweet"></i
+            ><i class="fa-regular fa-heart"></i
+            ><i class="fa-solid fa-heart"></i>
           </h6>
         </bottom>
       </article>
-
     </main>
   </body>
 </html>
-
 
 <!-- 
 
