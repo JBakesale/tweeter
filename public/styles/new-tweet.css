@@ -22,7 +22,8 @@
 .form__footer {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .form__input {
@@ -32,7 +33,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   font-family: 'Bungee', sans-serif;
   align-self: flex-start;
   margin-bottom: 0.5rem;
@@ -40,5 +41,10 @@
 
 .count {
   display: flex;
+  padding-right: 2rem;
 
+}
+
+.form--red {
+  color: #ff0000;
 }
