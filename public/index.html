@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-container" type="text/css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- App JS -->
@@ -54,9 +55,9 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <!-- Error container for validation error messages to be implemented later -->
-      <section class="error-container"><i class="fas fa-exclamation-triabngle"></i></i>
+      <!-- <section class="error-container"><i class="fas fa-exclamation-triabngle"></i></i>
         <h4></h4> <i class="fas fa-exclamation-triabngle"></i></i>
-      </section>
+      </section> -->
       <section class="new__tweet">
         <!-- <h2>Compose Tweet</h2> -->
         <form method="POST" action="/tweets" class="new__tweet__form">
@@ -67,6 +68,26 @@
           </div>
         </form>
       </section>
+      <article class="tweet__container">
+        <header>
+          <h4 class="user"></h4>
+          <h4 class="handle"></h4>
+        </header>
+        <tweetarea class="text"></tweetarea>
+        <footer>
+          <h6 class="date"></h6>
+          <h6 class="icons">
+            <i class="fa-regular fa-flag"></i><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i class="fa-regular fa-heart"></i><i class="fa-solid fa-heart"></i>
+          </h6>
+        </footer>
+      </article>
+
     </main>
   </body>
 </html>
+
+
+<!-- 
+
+
+-->

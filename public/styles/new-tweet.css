@@ -24,6 +24,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
 }
 
 .form__input {
@@ -34,7 +35,6 @@
   border-radius: 5px;
   cursor: pointer;
   /* margin-top: 1rem; */
-  font-family: 'Bungee', sans-serif;
   align-self: flex-start;
   margin-bottom: 0.5rem;
 }
