@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 120px;
+  width: 100%;
+  padding: 0 1.5em;
+  color: #FFFFFF;
+  background-color: #4056a1;
+  font-size: 24px;
+  position: fixed;
+}
+
+nav>span {
+  font-family: 'Bungee', sans-serif;
+}
+
+nav div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav div i {
+  font-family: 'Source Sans 3', sans-serif;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.bold {
+  font-weight: bold;
+}

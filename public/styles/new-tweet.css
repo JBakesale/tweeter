@@ -1,0 +1,44 @@
+.new__tweet {
+  /* border-bottom: 2px solid #4056a1; */
+  /* change to match nav background */
+  padding: 1rem;
+}
+
+.new__tweet__form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form__textarea {
+  height: 100%;
+  margin-bottom: 1rem;
+  resize: none;
+  border-bottom: 2px solid #4056a1;
+  padding: 0.5rem;
+  font-size: 16px;
+}
+
+.form__footer {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.form__input {
+  background-color: #4056a1;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-family: 'Bungee', sans-serif;
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.count {
+  display: flex;
+
+}
