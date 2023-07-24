@@ -4,9 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function () {
-  loadTweets();
-});
+
+
 
 // Escape function
 const escape = function (str) {
@@ -15,15 +14,8 @@ const escape = function (str) {
   return div.innerHTML;
 };
 
-const loadTweets = () => {
-  $.get("/tweets").then((data) => {
-    renderTweets(data);
-  });
-};
-
-
-// Create the tweet HTML
-const createTweetElement = (tweetData) => {
+// Create the tweet
+const createTweetElement = (data) => {
   let $tweet = $(`
   <article> class="tweet">
   <header>
@@ -35,9 +27,7 @@ const createTweetElement = (tweetData) => {
     </div>
     <h4>${escape(data.user.handle)}</h4>
   </header>
-
   <p>${escape(data.content.txt)}</p>
-
   <footer>
     <div class="timeago" datetime="2016-06-30 09:20:00"></div>
     <div class="icons">
@@ -53,12 +43,19 @@ const createTweetElement = (tweetData) => {
    
 // Loop through the tweets and dynamically render each
 const renderTweets = (tweets) => {
+  // Empty container to prevent duplicates
   const container = $(".tweets");
   container.empty();
 
   tweets.forEach(function (tweet) {
     let tweetElement = createTweetElement(tweet);
-    container.prepend(tweetElement); //prepend
+    container.prepend(tweetElement);
+  });
+};
+
+const loadTweets = () => {
+  $.get("/tweets").then((data) => {
+    renderTweets(data);
   });
 };
 
@@ -89,3 +86,14 @@ const submitTweet = function (event) {
   $(this).children().find("form__input").val("");
   $(".count").text(140);
 };
+
+
+
+// Show tweets on initial page load
+loadTweets();
+
+$(document).ready(function () {
+  
+  $('form.tweetSubmit').on('submit', submitTweet);
+
+});
