@@ -8,12 +8,49 @@ $(document).ready(function () {
   loadTweets();
 });
 
+// Escape function
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const loadTweets = () => {
   $.get("/tweets").then((data) => {
     renderTweets(data);
   });
 };
 
+
+// Create the tweet HTML
+const createTweetElement = (tweetData) => {
+  let $tweet = $(`
+  <article> class="tweet">
+  <header>
+    <div class="user">
+      <img
+        scr="${escape(data.user.avatars)}"
+        alt="">
+      <p>${escape(data.user.name)}</p>
+    </div>
+    <h4>${escape(data.user.handle)}</h4>
+  </header>
+
+  <p>${escape(data.content.txt)}</p>
+
+  <footer>
+    <div class="timeago" datetime="2016-06-30 09:20:00"></div>
+    <div class="icons">
+      <i class="fa-regular fa-flag"></i>
+      <
+      <
+    </div>
+  </footer>
+</article>
+  `);
+  return $tweet
+};
+   
 // Loop through the tweets and dynamically render each
 const renderTweets = (tweets) => {
   const container = $(".tweets");
@@ -23,17 +60,6 @@ const renderTweets = (tweets) => {
     let tweetElement = createTweetElement(tweet);
     container.prepend(tweetElement); //prepend
   });
-};
-
-// Create the tweet HTML
-const createTweetElement = (tweetData) => {
-  let $tweet = $("<article>").addClass("tweet");
-
-  let html = `
-    <header class="top"
-      <div>
-        <img class="tweet__avatar" src="${tweetData.user.avatar}">
-        `;
 };
 
 // Form validation
