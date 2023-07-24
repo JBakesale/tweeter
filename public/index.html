@@ -65,20 +65,20 @@
         <h4></h4> <i class="fas fa-exclamation-triabngle"></i></i>
       </section> -->
       <section class="new__tweet">
-        <!-- <h2>Compose Tweet</h2> -->
+
         <form method="POST" action="/tweets" class="new__tweet__form">
-          <textarea
-            class="form__textarea"
-            name="text"
-            placeholder="Sing your Song"
-          ></textarea>
+          <div class="error__message"></div>
+          <div class="form__header">
+            <label for="tweet__form">What are you humming about?</label>
+            <textarea name="text" class="tweet__form"></textarea>
+          </div>
           <div class="form__footer">
             <input type="submit" value="Tweet" class="form__input" />
             <span class="count">140</span>
           </div>
         </form>
       </section>
-      <article class="tweet__container">
+      <section class="tweet__container">
         <top>
           <h4 class="user"><i class="fa-solid fa-dragon"></i></h4>
           <h4 class="handle"></h4>
