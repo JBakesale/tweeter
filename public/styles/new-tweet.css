@@ -1,42 +1,56 @@
 .new__tweet {
-  /* border-bottom: 2px solid #4056a1; */
-  /* change to match nav background */
-  padding: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
 
-.new__tweet__form {
+/* .new__tweet__form {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  border-bottom: 5px solid #4056a1;
+  font-weight: 600;
+  
+} */
+
+.form__header {
+display: flex;
+flex-direction: column;
+border-bottom: 5px solid #4056a1;
+font-weight: 400;
 }
 
-.form__textarea {
-  height: 100%;
-  margin-bottom: 1rem;
-  resize: none;
-  border-bottom: 2px solid #4056a1;
-  padding: 0.5rem;
-  font-size: 16px;
+.form__header > textarea {
+  height: 40px;
+  color: orchid;
+  background-color: transparent;
 }
 
 .form__footer {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
   font-family: 'Bungee', sans-serif;
+  margin-top: 10px;
+  width: 100%;
 }
 
-.form__input {
+
+
+.form__footer > form__input {
   background-color: #4056a1;
   color: #ffffff;
   padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 5px;
+  border: 0;
   cursor: pointer;
-  /* margin-top: 1rem; */
-  align-self: flex-start;
   margin-bottom: 0.5rem;
+  font-size: 1em;
+  width: 7rem;
+  height: 2.5rem;
 }
 
 .count {
@@ -47,4 +61,13 @@
 
 .form--red {
   color: #ff0000;
+}
+
+.error__message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: red;
+  margin-bottom: 8px;
 }

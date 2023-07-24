@@ -26,7 +26,7 @@ const renderTweets = (tweets) => {
 
   tweets.forEach(function(tweet) {
     let tweetElement = createTweetElement(tweet);
-    container.append(tweetElement); //prepend
+    container.prepend(tweetElement); //prepend
   })
 
 };
