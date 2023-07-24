@@ -4,9 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-
-
 // Escape function
 const escape = function (str) {
   let div = document.createElement("div");
@@ -38,9 +35,9 @@ const createTweetElement = (data) => {
   </footer>
 </article>
   `);
-  return $tweet
+  return $tweet;
 };
-   
+
 // Loop through the tweets and dynamically render each
 const renderTweets = (tweets) => {
   // Empty container to prevent duplicates
@@ -87,13 +84,9 @@ const submitTweet = function (event) {
   $(".count").text(140);
 };
 
-
-
 // Show tweets on initial page load
 loadTweets();
 
 $(document).ready(function () {
-  
-  $('form.tweetSubmit').on('submit', submitTweet);
-
+  $("form.tweetSubmit").on("submit", submitTweet);
 });
