@@ -28,6 +28,9 @@ font-weight: 400;
   height: 40px;
   color: orchid;
   background-color: transparent;
+  border: none;
+  resize: none;
+  outline: none;
 }
 
 .form__footer {
