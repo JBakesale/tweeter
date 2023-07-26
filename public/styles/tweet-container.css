@@ -23,10 +23,8 @@
   margin-left: 2rem;
 }
 
-tweetarea {
-  font-family: 'Lumanosimo', cursive;
-  border-bottom: 1px solid blanchedalmond;
-
+.tweet__form {
+  font-family: 'VT323', monospace;
 }
 
 .tweet__container .bottom {

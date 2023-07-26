@@ -18,17 +18,19 @@
 .form__header {
   display: flex;
   flex-direction: column;
-  border-bottom: 5px solid #4056a1;
+  border-bottom: 3px solid #4056a1;
   font-weight: 400;
 }
 
 .form__header>textarea {
   height: 40px;
-  color: orchid;
+  color: #1DA1F2;
   background-color: transparent;
   border: none;
   resize: none;
   outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8em;
 }
 
 .form__footer {
@@ -40,7 +42,7 @@
   width: 100%;
 } 
 
-.form__footer >form__input {
+.form__footer >button {
   background-color: #4056a1;
   color: #ffffff;
   padding: 0.5rem 1rem;

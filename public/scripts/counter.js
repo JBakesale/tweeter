@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  $(".form__textarea").on('input', onInput);
+  $(".tweet__form").on('input', onInput);
 
 
 });
@@ -10,7 +10,7 @@ const onInput = function(event) {
   let $input = $(this);
 
   let len = $input.val().length;
-  let charsLeft = 10 - len; // reassign to 140
+  let charsLeft = 140 - len; // reassign to 140
 
   const $counter = $input.closest('form').find('.count');
 
