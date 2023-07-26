@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 // timeSinceTweet function here?
 
 // Escape function
@@ -60,6 +61,8 @@ const loadTweets = () => {
 
 // Form validation
 const submitTweet = function (event) {
+  // event.preventDefault();
+
   $(".error__message").slideUp(400).text("");
 
   if (!$(this).children().find(".tweet__form").val()) {
@@ -77,6 +80,9 @@ const submitTweet = function (event) {
   })
     .then(function (tweet) {
       loadTweets();
+
+      // window.location.href = "/";
+      // either redirect here or in loadTweets
     })
     .catch((err) => {
       console.log("Error", err);

@@ -1,7 +1,7 @@
 $(function() {
 
   // For submission
-  $('.newtweet_form').submit(function(event) {
+  $('.tweet_form').submit(function(event) {
     event.preventDefault();
 
     const $form = $(this);
