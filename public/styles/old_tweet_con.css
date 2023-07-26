@@ -1,0 +1,43 @@
+.tweet__container {
+  width: 90%;
+  border: 1px solid deepskyblue;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.tweet__container .top {
+  font-family: 'VT323', monospace;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.tweet__container .user {
+  margin-right: 2rem;
+}
+
+.tweet__container .handle {
+  margin-left: 2rem;
+}
+
+.tweet__form {
+  font-family: 'VT323', monospace;
+}
+
+.tweet__container .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+/* .tweet__container .date {
+
+} */
+
+.tweet__container .icons:hover {
+  color: chartreuse;
+}
