@@ -1,13 +1,4 @@
-.new__tweet {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  margin-top: 2em;
-  margin-bottom: 1em;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
-}
+
 
 .submit__tweet {
   display: flex;
@@ -15,8 +6,6 @@
   border-bottom: 5px solid #4056a1;
   font-weight: 600;
 }
-
-
 
 .form__header {
   display: flex;
