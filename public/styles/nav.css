@@ -26,12 +26,13 @@ nav div {
   align-items: center;
 }
 
-nav div i {
+nav div .writeTweet {
   font-family: 'Source Sans 3', sans-serif;
   font-style: normal;
   font-size: 16px;
- 
+
 }
+
 nav div j {
   color: red;
 }

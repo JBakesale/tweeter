@@ -12,7 +12,7 @@ $(function() {
       return false;
     }
 
-// this is the ajax request refactored
+// Ajax request refactored
 
     let data = $form.serialize();
 
@@ -28,7 +28,7 @@ $(function() {
 
 
 
-// Partial tweet valid func
-function isTweetValid(inputElement) {
+// // Partial tweet valid func
+// function isTweetValid(inputElement) {
 
-}
+// }
