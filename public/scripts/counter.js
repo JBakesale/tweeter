@@ -1,19 +1,14 @@
 $(document).ready(function () {
-
-  $(".tweet__form").on('input', onInput);
-
-
+  $(".tweet__form").on("input", onInput);
 });
 
-const onInput = function(event) {
-
-  let $input = $(this);
+const onInput = function (event) {
+  const $counter = $("output", event.currentTarget);
+  let $input = $("#" + $counter.attr("for"), event.currentTarget);
 
   let len = $input.val().length;
-  let charsLeft = 140 - len; // reassign to 140
+  let charsLeft = 140 - len;
 
-  const $counter = $input.closest('form').find('.count');
-
-  $counter.text(charsLeft);
-  $counter.toggleClass('form--red', charsLeft < 0);
+  $counter.val(charsLeft);
+  $counter.toggleClass("form--red", charsLeft < 0);
 };

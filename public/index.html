@@ -47,6 +47,7 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/counter.js"></script>
     <script type="text/javascript" src="/scripts/form.js"></script>
+    <script type="text/javascript" src="dist/timeago.min.js"></script>
   </head>
   <body>
     <!-- Top nav bar (fixed) -->
@@ -68,23 +69,21 @@
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-  
       <section class="error-container">
         <i class="fas fa-exclamation-triabngle"></i>
-        <h4></h4>
+        <span></span>
         <i class="fas fa-exclamation-triabngle"></i>
       </section>
 
       <section class="new__tweet">
-        <form method="POST" action="/tweets" class="submit__tweet">
-          <div class="error__message"></div>
+        <form method="POST" action="/tweets" class="tweet__form">
           <div class="form__header">
-            <label for="tweet__form">What are you humming about?</label>
-            <textarea name="text" class="tweet__form"></textarea>
+            <label for="text">What are you humming about?</label>
+            <textarea id="text" name="text" class="tweet__text"></textarea>
           </div>
           <div class="form__footer">
             <button type="submit">Tweet</button>
-            <output name="counter" class="count" for="tweet__form">140</output>
+            <output name="counter" class="count" for="text">140</output>
           </div>
         </form>
       </section>

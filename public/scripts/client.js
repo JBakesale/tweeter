@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
 // timeSinceTweet function here?
 
 // Escape function
@@ -60,41 +59,15 @@ const loadTweets = () => {
 };
 
 // Form validation
-const submitTweet = function (event) {
-  // event.preventDefault();
-
-  $(".error__message").slideUp(400).text("");
-
-  if (!$(this).children().find(".tweet__form").val()) {
-    return $(".error__message").text("Please try again").slideDown();
-  }
-  // either form__input or tweet__form
-  if ($(this).children().find(".tweet__form").val().length > 140) {
-    return $(".error__message").text("Your tweet is too long").slideDown();
-  }
-
+const submitTweet = function (data) {
   // Add tweet to database and .then render
-  $.ajax("/tweets", {
+  return $.ajax("/tweets", {
     method: "POST",
-    data: $(this).serialize(),
-  })
-    .then(function (tweet) {
-      loadTweets();
-
-      // window.location.href = "/";
-      // either redirect here or in loadTweets
-    })
-    .catch((err) => {
-      console.log("Error", err);
-    });
-  // Reset form count
-  $(this).children().find(".tweet__form").val("");
-  $(".count").text(140);
+    data,
+  }).then(loadTweets);
 };
 
-// Show tweets on initial page load
-loadTweets();
-
 $(document).ready(function () {
-  $(".tweet__form").on("submit", submitTweet);
+  // Show tweets on initial page load
+  loadTweets();
 });
