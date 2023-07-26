@@ -51,7 +51,7 @@
         <i><span class="bold">Write</span> a new tweet</i>
         <j class="fa-solid fa-angles-down fa-fade"></j>
       </div>
-    </nav>
+    </nav>f
     <header>
       <div>
         <img src="/images/profile-hex.png" />
@@ -71,12 +71,12 @@
         <form method="POST" action="/tweets" class="submit__tweet">
           <div class="error__message"></div>
           <div class="form__header">
-            <label for="tweet__form">What are you humming about?</label>
+            <label for="tweet__form">What song would you like to sing today?</label>
             <textarea name="text" class="tweet__form"></textarea>
           </div>
           <div class="form__footer">
-            <input type="submit" value="Tweet" class="form__input" />
-            <span class="count">140</span>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="count" for="tweet__form">140</output>
           </div>
         </form>
       </section>
@@ -95,7 +95,6 @@
             ><i class="fa-solid fa-heart"></i>
           </h6>
         </bottom>
-      </article>
     </main>
   </body>
 </html>

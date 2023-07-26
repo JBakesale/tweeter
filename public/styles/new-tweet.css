@@ -1,9 +1,17 @@
-
+.new__tweet {
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
 
 .submit__tweet {
   display: flex;
   flex-direction: column;
-  border-bottom: 5px solid #4056a1;
+  /* border-bottom: 5px solid #4056a1; */
   font-weight: 600;
 }
 
@@ -30,11 +38,9 @@
   font-family: 'Bungee', sans-serif;
   margin-top: 10px;
   width: 100%;
-}
+} 
 
-
-
-.form__footer>form__input {
+.form__footer >form__input {
   background-color: #4056a1;
   color: #ffffff;
   padding: 0.5rem 1rem;

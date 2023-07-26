@@ -26,17 +26,6 @@ nav div {
   align-items: center;
 }
 
-.new__tweet {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  margin-top: 2em;
-  margin-bottom: 1em;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
-}
-
 nav div i {
   font-family: 'Source Sans 3', sans-serif;
   font-style: normal;
