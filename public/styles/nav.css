@@ -39,15 +39,3 @@ nav div j {
 .bold {
   font-weight: bold;
 }
-
-@keyframes MoveUpDown {
-
-  0%,
-  50% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
