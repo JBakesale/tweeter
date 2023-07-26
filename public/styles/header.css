@@ -1,4 +1,4 @@
-header {
+body > header {
   display: flex;
   height: 520px;
   width: 100%;
@@ -7,9 +7,10 @@ header {
   flex-direction: column;
   background-color: #ebeb05;
   background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
+  margin-bottom: 20px;
 }
 
-header div {
+header > div {
   font-family: 'Source Sans 3', sans-serif;
 }
 
