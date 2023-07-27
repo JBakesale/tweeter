@@ -66,12 +66,12 @@ $(".tweet__form").submit(function (event) {
     const text = $('.tweet__text').val().length
     if (!text) {
       $('.error-container').slideDown(400).css('display', 'flex')
-      $('.error-message').text('yo no text')
+      $('.error-message').text('No input detected')
       return 
     }
     if (text > 140) {
     $('.error-container').slideDown(400).css('display', 'flex')
-      $('.error-message').text('dude way over')
+      $('.error-message').text('Character Limit Exceeded')
       return 
     }
 
