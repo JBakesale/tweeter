@@ -3,9 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-// timeSinceTweet function here?
-
 // Escape function
 const escape = function (str) {
   let div = document.createElement("div");
@@ -33,8 +30,6 @@ const createTweetElement = function (data) {
       <i class="fa fa-heart"></i>
       <i class="fa fa-retweet"></i>
       <i class="fa-regular fa-flag"></i>
-      
-      
     </div>
   </div>
 </article>
@@ -42,7 +37,7 @@ const createTweetElement = function (data) {
   return $tweet;
 };
 
-// Loop through the tweets and dynamically render each
+// Loop through the tweets and dynamically render
 const renderTweets = (tweets) => {
   // Empty container to prevent duplicates
   const container = $(".tweets__container");
@@ -62,7 +57,7 @@ const loadTweets = () => {
 
 // Form validation
 const submitTweet = function (data) {
-  // Add tweet to database and .then render
+  // Add tweet to database and .then load/render
   return $.ajax("/tweets", {
     method: "POST",
     data,

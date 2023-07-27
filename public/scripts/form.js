@@ -1,11 +1,5 @@
 $(function () {
   const errorMessage = $(".error-message");
-  // errorMessage.on("reset", function () {
-  //   errorMessage.slideUp(400);
-  // });
-  // errorMessage.on("error", function (event, errorMessage) {
-  //   errorMessage.slideDown(400);
-  // });
 
   const isTweetValid = function (form) {
     const text_element = $(".tweet__text", form);
@@ -21,31 +15,32 @@ $(function () {
 
     return true;
   };
+
   errorMessage.hide();
+
   // For submission
-  $(".tweet__form")
-    // .on("reset", function () {
-      // errorMessage.trigger("reset");
-    // })
-    .submit(function (event) {
-      event.preventDefault();
+  $(".tweet__form").submit(function (event) {
+    event.preventDefault();
 
-      const $form = $(this);
+    const $form = $(this);
 
-      // Validate tweet
-      if (!isTweetValid($form)) {
-        return false;
+    // Validate tweet
+    if (!isTweetValid($form)) {
+      return false;
+    }
+    let data = $form.serialize();
+
+    submitTweet(data).then(() => {
+      loadTweets();
+
+      // Clear submission entry
+      $form.trigger("reset");
+
+      // If previous error, slide errorMessage offscreen
+      if (errorMessage.is(":visible")) {
+        errorMessage.slideUp(400);
       }
-
-      // Ajax request refactored
-
-      let data = $form.serialize();
-
-      submitTweet(data).then(() => {
-        loadTweets();
-
-        $form.trigger("reset");
-      });
     });
+  });
   console.log($(".tweet__form"));
 });

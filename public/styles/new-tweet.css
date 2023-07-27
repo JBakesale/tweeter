@@ -64,6 +64,11 @@
   color: #ff0000;
 }
 
+.error-container {
+  display: flex;
+  justify-content: center;
+  
+}
 .error-message {
   display: flex;
   flex-direction: column;
