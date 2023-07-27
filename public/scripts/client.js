@@ -59,11 +59,6 @@ const loadTweets = () => {
   });
 };
 
-// Form validation
-const submitTweet = function (data) {
-  // Add tweet to database and .then load/render
-  return 
-};
 //Submission Form
 $(".tweet__form").submit(function (event) {
   event.preventDefault();
