@@ -40,9 +40,9 @@
   font-family: 'Bungee', sans-serif;
   margin-top: 10px;
   width: 100%;
-} 
+}
 
-.form__footer >button {
+.form__footer>button {
   background-color: #4056a1;
   color: #ffffff;
   padding: 0.5rem 1rem;
@@ -65,16 +65,33 @@
 }
 
 .error-container {
-  display: flex;
+
+  display: none;
   justify-content: center;
-  
+  border: 2px solid red;
 }
+
 .error-message {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   color: red;
-  margin-bottom: 8px;
+  font-size: large;
+  /* margin-bottom: 8px; */
   /* needs a red box around text with error triangles on either side */
 }
+
+.error-container.active {
+  border-color: red;
+}
+
+/* .error-container.active:before,
+.error-container.active:after {
+  content: "\f071";
+  Font Awesome icon for the triangle symbol
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: red;
+  font-size: 18px;
+  position: absolute; */

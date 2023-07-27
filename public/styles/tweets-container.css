@@ -1,63 +1,40 @@
-/* Style for the 'tweet' article */
 .tweet {
   border: 1px solid #ccc;
   padding: 10px;
-  margin-bottom: 10px;
-}
-
-/* Style for the 'user' div */
-.tweet__top .user {
   display: flex;
-  align-items: center;
-  margin-bottom: 5px;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  /* Added for positioning the username */
 }
 
-/* Style for the user avatar */
-.tweet__top .user img {
+.tweet__top {
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  width: 0.8em;
+}
+
+.avatar {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
+  background-color: red;
 }
 
-/* Style for the user name */
-.tweet__top .user p {
+.name {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.handle{
   font-weight: bold;
-  margin: 0;
 }
 
-/* Style for the user handle */
-.tweet__top h4 {
-  margin: 0;
-  color: #888;
+.text {
+  border-bottom: 1px solid #ccc;
 }
 
-/* Style for the tweet content text */
-.tweet p {
-  margin: 0;
-}
-
-/* Style for the timeago */
-.tweet-bottom .timeago {
-  color: #888;
-  margin-bottom: 5px;
-}
-
-/* Style for the icons in the tweet bottom */
-.tweet-bottom .icons {
+.tweet__bottom {
   display: flex;
-}
-
-/* Style for the icon elements */
-.tweet-bottom .icons i {
-  margin-right: 10px;
-  color: #888;
-  cursor: pointer;
-}
-
-/* Adjustments for the 'tweets__container' section */
-.tweets__container {
-  max-width: 600px;
-  /* Adjust this value as needed */
-  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
 }

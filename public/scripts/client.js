@@ -4,6 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 // Escape function
+$(document).ready(function () {
+
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -14,16 +16,16 @@ const escape = function (str) {
 const createTweetElement = function (data) {
   let $tweet = $(`
   <article class="tweet">
-  <div class="tweet__top">
-    <div class="user">
+    <div class="tweet__top">
       <img
-        scr="${escape(data.user.avatars)}"
-        alt="">
-      <p>${escape(data.user.name)}</p>
+        src="${escape(data.user.avatars)}"
+        alt="avatar">
+      <div class="name">${escape(data.user.name)}</div>
+      <div class="handle">${escape(data.user.handle)}</div>
     </div>
-    <h4>${escape(data.user.handle)}</h4>
-  </div>
-  <p>${escape(data.content.text)}</p>
+    
+  <div class="text">${escape(data.content.text)}</div>
+
   <div class="tweet-bottom">
     <div class="timeago">${timeago.format(data.created_at)}</div>
     <div class="icons">
@@ -58,13 +60,35 @@ const loadTweets = () => {
 // Form validation
 const submitTweet = function (data) {
   // Add tweet to database and .then load/render
-  return $.ajax("/tweets", {
-    method: "POST",
-    data,
-  }).then(loadTweets);
+  return 
 };
+//Submission Form
+$(".tweet__form").submit(function (event) {
+  event.preventDefault();
+  const $form = $(this);
+    const text = $('.tweet__text').val().length
+    if (!text) {
+      $('.error-container').slideDown(400).css('display', 'flex')
+      $('.error-message').text('yo no text')
+      return 
+    }
+    if (text > 140) {
+    $('.error-container').slideDown(400).css('display', 'flex')
+      $('.error-message').text('dude way over')
+      return 
+    }
 
-$(document).ready(function () {
+let data = $form.serialize();
+$.ajax("/tweets", {
+  method: "POST",
+  data,
+}).then(loadTweets);
+  $('.tweet__text').val('')
+  $('.count').text(140)
+  $('.error-container').slideUp(400).css('display', 'none')
+
+});
+
   // Show tweets on initial page load
   loadTweets();
 });
