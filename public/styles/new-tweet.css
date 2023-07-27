@@ -11,7 +11,6 @@
 .submit__tweet {
   display: flex;
   flex-direction: column;
-  /* border-bottom: 5px solid #4056a1; */
   font-weight: 600;
 }
 
@@ -31,6 +30,7 @@
   outline: none;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.8em;
+  margin-top: 1rem;
 }
 
 .form__footer {
@@ -78,20 +78,9 @@
   text-align: center;
   color: red;
   font-size: large;
-  /* margin-bottom: 8px; */
-  /* needs a red box around text with error triangles on either side */
+  font-weight: bold;
 }
 
 .error-container.active {
   border-color: red;
 }
-
-/* .error-container.active:before,
-.error-container.active:after {
-  content: "\f071";
-  Font Awesome icon for the triangle symbol
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  color: red;
-  font-size: 18px;
-  position: absolute; */
