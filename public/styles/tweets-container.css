@@ -1,18 +1,27 @@
 .tweet {
-  border: 1px solid #ccc;
+  border: 3px solid #29344f;
   padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   position: relative;
-  /* Added for positioning the username */
+  margin-bottom: 3rem;
+}
+
+.tweet:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .tweet__top {
   display: flex;
   justify-content: space-between;
-  height: auto;
-  width: 0.8em;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
 }
 
 .avatar {
@@ -23,18 +32,37 @@
 
 .name {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-left: 1rem;
 }
 
-.handle{
-  font-weight: bold;
+.handle {
+  color: #08fbf9;
 }
 
 .text {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid #03a9f7;
+  padding: 5px 0;
 }
 
-.tweet__bottom {
+.container .tweet__bottom {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: baseline;
   align-items: center;
+  width: 100%;
+}
+
+.timeago {
+  font-size: 15px;
+  color: #888;
+}
+
+.container .tweet__bottom > .icons {
+  font-size: 25px;
+  margin-left: 3rem;
+  float: right;
+}
+
+.tweet__bottom .icons:hover {
+  color: #FFD700
 }
