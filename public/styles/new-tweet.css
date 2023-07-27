@@ -84,3 +84,7 @@
 .error-container.active {
   border-color: red;
 }
+
+.error-container .fas.fa-exclamation-triangle {
+  color: red;
+}
