@@ -64,11 +64,12 @@
   color: #ff0000;
 }
 
-.error-container {
+.error-message {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   color: red;
   margin-bottom: 8px;
+  /* needs a red box around text with error triangles on either side */
 }

@@ -17,7 +17,7 @@ const escape = function (str) {
 const createTweetElement = function (data) {
   let $tweet = $(`
   <article class="tweet">
-  <header>
+  <div class="tweet__top">
     <div class="user">
       <img
         scr="${escape(data.user.avatars)}"
@@ -25,16 +25,18 @@ const createTweetElement = function (data) {
       <p>${escape(data.user.name)}</p>
     </div>
     <h4>${escape(data.user.handle)}</h4>
-  </header>
+  </div>
   <p>${escape(data.content.text)}</p>
-  <footer>
-    <div class="timeago" datetime="2016-06-30 09:20:00"></div>
+  <div class="tweet-bottom">
+    <div class="timeago">${timeago.format(data.created_at)}</div>
     <div class="icons">
+      <i class="fa fa-heart"></i>
+      <i class="fa fa-retweet"></i>
       <i class="fa-regular fa-flag"></i>
-      <
-      <
+      
+      
     </div>
-  </footer>
+  </div>
 </article>
   `);
   return $tweet;

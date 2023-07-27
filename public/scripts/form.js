@@ -1,40 +1,36 @@
 $(function () {
-  const errorContainer = $("section.error-container");
-  errorContainer.on("reset", function () {
-    errorContainer.slideUp(400).find("span").text("");
-  });
-  errorContainer.on("error", function (event, errorMessage) {
-    // TODO: double check behaviour of on.error to see if i can reuse the on.reset
-    errorContainer.slideUp(400).find("span").text("");
-    errorContainer.find("span").text(errorMessage);
-    errorContainer.slideDown();
-  });
+  const errorMessage = $(".error-message");
+  // errorMessage.on("reset", function () {
+  //   errorMessage.slideUp(400);
+  // });
+  // errorMessage.on("error", function (event, errorMessage) {
+  //   errorMessage.slideDown(400);
+  // });
 
   const isTweetValid = function (form) {
     const text_element = $(".tweet__text", form);
     const text = text_element.val();
     if (!text) {
-      errorContainer.trigger("error", "No input detected");
+      errorMessage.text("No input detected").slideDown(400);
       return false;
     }
     if (text.length > 140) {
-      errorContainer.trigger("error", "Your tweet is too long!");
+      errorMessage.text("Your tweet is too long!").slideDown(400);
       return false;
     }
 
     return true;
   };
-
+  errorMessage.hide();
   // For submission
   $(".tweet__form")
-    .on("reset", function () {
-      errorContainer.trigger("reset");
-    })
+    // .on("reset", function () {
+      // errorMessage.trigger("reset");
+    // })
     .submit(function (event) {
       event.preventDefault();
 
       const $form = $(this);
-      // const $input = $form.find("textarea");
 
       // Validate tweet
       if (!isTweetValid($form)) {
