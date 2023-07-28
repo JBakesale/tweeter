@@ -23,4 +23,4 @@ This project was compiled with love using newly learned HTML, CSS, JS, jQuery an
 
 !["Screenshot of error message in action"](https://github.com/JBakesale/tweeter/blob/master/docs/error-message.png)
 !["Screenshot of mobile view homepage"](https://github.com/JBakesale/tweeter/blob/master/docs/mobile-homepage.png)
-!["Screenshot of better css functionality"](https://github.com/JBakesale/tweeter/blob/master/docs/container-functionality.png)gi
+!["Screenshot of better css functionality"](https://github.com/JBakesale/tweeter/blob/master/docs/container-functionality.png)
