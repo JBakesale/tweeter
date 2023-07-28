@@ -6,6 +6,9 @@
   gap: 10px;
   position: relative;
   margin-bottom: 3rem;
+  overflow: hidden;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 .tweet:hover {
@@ -42,6 +45,8 @@
 .text {
   border-bottom: 2px solid #03a9f7;
   padding: 5px 0;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .container .tweet__bottom {

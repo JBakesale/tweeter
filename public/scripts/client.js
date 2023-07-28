@@ -5,16 +5,15 @@
  */
 // Escape function
 $(document).ready(function () {
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
-const escape = function (str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
-
-// Create the tweet
-const createTweetElement = function (data) {
-  let $tweet = $(`
+  // Create the tweet
+  const createTweetElement = function (data) {
+    let $tweet = $(`
   <article class="tweet">
     <div class="tweet__top">
       <div class="user">
@@ -38,53 +37,60 @@ const createTweetElement = function (data) {
   </div>
 </article>
   `);
-  return $tweet;
-};
+    return $tweet;
+  };
 
-// Loop through the tweets and dynamically render
-const renderTweets = (tweets) => {
-  // Empty container to prevent duplicates
-  const container = $(".tweets__container");
-  container.empty();
+  // Loop through the tweets and dynamically render
+  const renderTweets = (tweets) => {
+    // Empty container to prevent duplicates
+    const container = $(".tweets__container");
+    container.empty();
 
-  tweets.forEach(function (tweet) {
-    let tweetElement = createTweetElement(tweet);
-    container.prepend(tweetElement);
-  });
-};
+    tweets.forEach(function (tweet) {
+      let tweetElement = createTweetElement(tweet);
+      container.prepend(tweetElement);
+    });
+  };
 
-const loadTweets = () => {
-  $.get("/tweets").then((data) => {
-    renderTweets(data);
-  });
-};
+  const loadTweets = () => {
+    $.get("/tweets").then((data) => {
+      renderTweets(data);
+    });
+  };
 
-//Submission Form
-$(".tweet__form").submit(function (event) {
-  event.preventDefault();
-  const $form = $(this);
-    const text = $('.tweet__text').val().length
-    if (!text) {
-      $('.error-container').slideDown(400).css('display', 'flex')
-      $('.error-message').text('No input detected')
-      return 
+  //Submission Form
+  $(".tweet__form").submit(function (event) {
+    event.preventDefault();
+    const $form = $(this);
+    const text = $(".tweet__text");
+    const textVal = text.val().length;
+
+    if (!textVal) {
+      $(".error-container").slideDown(400).css("display", "flex");
+      $(".error-message").text("No input detected");
+      return;
     }
-    if (text > 140) {
-    $('.error-container').slideDown(400).css('display', 'flex')
-      $('.error-message').text('Character Limit Exceeded')
-      return 
+    if (textVal > 140) {
+      $(".error-container").slideDown(400).css("display", "flex");
+      $(".error-message").text("Character Limit Exceeded");
+      return;
     }
+    // if ($.trim(textVal) === 0) {
+    //   $(".error-container").slideDown(400).css("display", "flex");
+    //   $(".error-message").text("Something went wrong. Please try again");
+    //   return;
+    // }
+    console.log($.trim(text));
 
-let data = $form.serialize();
-$.ajax("/tweets", {
-  method: "POST",
-  data,
-}).then(loadTweets);
-  $('.tweet__text').val('')
-  $('.count').text(140)
-  $('.error-container').slideUp(400).css('display', 'none')
-
-});
+    let data = $form.serialize();
+    $.ajax("/tweets", {
+      method: "POST",
+      data,
+    }).then(loadTweets);
+    $(".tweet__text").val("");
+    $(".count").text(140);
+    $(".error-container").slideUp(400).css("display", "none");
+  });
 
   // Show tweets on initial page load
   loadTweets();
