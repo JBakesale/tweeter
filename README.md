@@ -24,3 +24,4 @@ This project was compiled with love using newly learned HTML, CSS, JS, jQuery an
 !["Screenshot of main page with empty tweet box"](https://github.com/JBakesale/tweeter/blob/master/docs/mobie-view.png)
 !["Screenshot of error message in action"](https://github.com/JBakesale/tweeter/blob/master/docs/error-message.png)
 !["Screenshot of widescreen view"](https://github.com/JBakesale/tweeter/blob/master/docs/widescreen.png)
+!["Screenshot of better css functionality"](https://github.com/JBakesale/tweeter/blob/master/docs/container-functionality.png)
