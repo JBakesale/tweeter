@@ -32,7 +32,7 @@ $(document).ready(function () {
     <div class="icons">
       <i class="fa fa-heart"></i>
       <i class="fa fa-retweet"></i>
-      <i class="fa-regular fa-flag"></i>
+      <i class="fa-solid fa-flag"></i>
     </div>
   </div>
 </article>
@@ -68,11 +68,6 @@ $(document).ready(function () {
     if ($.trim(text) === "") {
       $(".error-container").slideDown(400).css("display", "flex");
       $(".error-message").text("Invalid entry, please try again");
-      return;
-    }
-    if (!textVal) {
-      $(".error-container").slideDown(400).css("display", "flex");
-      $(".error-message").text("No input detected");
       return;
     }
     if (textVal > 140) {
