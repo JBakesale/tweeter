@@ -62,9 +62,14 @@ $(document).ready(function () {
   $(".tweet__form").submit(function (event) {
     event.preventDefault();
     const $form = $(this);
-    const text = $(".tweet__text");
-    const textVal = text.val().length;
+    const text = $(".tweet__text").val();
+    const textVal = $(".tweet__text").val().length;
 
+    if ($.trim(text) === "") {
+      $(".error-container").slideDown(400).css("display", "flex");
+      $(".error-message").text("Invalid entry, please try again");
+      return;
+    }
     if (!textVal) {
       $(".error-container").slideDown(400).css("display", "flex");
       $(".error-message").text("No input detected");
@@ -75,12 +80,6 @@ $(document).ready(function () {
       $(".error-message").text("Character Limit Exceeded");
       return;
     }
-    // if ($.trim(textVal) === 0) {
-    //   $(".error-container").slideDown(400).css("display", "flex");
-    //   $(".error-message").text("Something went wrong. Please try again");
-    //   return;
-    // }
-    console.log($.trim(text));
 
     let data = $form.serialize();
     $.ajax("/tweets", {
